@@ -1,0 +1,44 @@
+# Secrets & Certificates
+certs/*.key
+certs/*.crt
+certs/*.srl
+*.pem
+backend/config/server.json.bak
+
+# Go
+backend/vpn-server
+*.exe
+vendor/
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+*.iml
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+android/app/release/
+*.apk
+*.aab
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml

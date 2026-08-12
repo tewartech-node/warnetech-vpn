@@ -1,0 +1,47 @@
+{
+  "name": "WarnetechVPN",
+  "listen_addr": "0.0.0.0:443",
+  "protocols": ["quic", "tcp"],
+  "encryption": "chacha20",
+  "cipher_suites": ["AES-256-GCM", "ChaCha20-Poly1305"],
+  "max_clients": 100,
+  "timeout_seconds": 300,
+  "locations": [
+    {
+      "name": "US East",
+      "country": "US",
+      "region": "us-east-1",
+      "ip": "203.0.113.1",
+      "port": 443,
+      "protocol": "quic"
+    },
+    {
+      "name": "EU Central",
+      "country": "DE",
+      "region": "eu-central-1",
+      "ip": "203.0.113.2",
+      "port": 443,
+      "protocol": "tcp"
+    },
+    {
+      "name": "Singapore",
+      "country": "SG",
+      "region": "ap-southeast-1",
+      "ip": "203.0.113.3",
+      "port": 443,
+      "protocol": "quic"
+    }
+  ],
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "file": "/var/log/warnetech-vpn.log",
+    "retention_days": 7
+  },
+  "security": {
+    "require_auth": true,
+    "cert_file": "certs/server.crt",
+    "key_file": "certs/server.key",
+    "ca_file": "certs/ca.crt"
+  }
+}
